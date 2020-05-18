@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  
+<div id="app">
+  <p>{{ message }} </p>
+  <p>{{ number + 5 }} </p>
+  <p>{{ ok ? 'YES' : 'NO' }} </p>
+  <p>{{ sayHi() }} </p>
+</div>
+  
+<script>
+  new Vue({
+    el: '#app',
+      data: {
+        message: 'Hello vueJS!!',
+        number: 3,
+        ok: true
+      },
+      methods:{
+        sayHi: function(){
+          return 'Hi';
+        }
+      }        
+  });
+</script>
