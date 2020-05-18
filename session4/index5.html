@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+  <p>{{message}}</p>
+  <p>{{name}}</p>
+  <p>{{myData}}</p>
+  <button @click="message = 'ボタンから変更'">変更</button>
+</div>
+
+<script>
+
+  var data = {
+      message: 'こんにちは',
+      name: 'ナマエ'
+    };
+
+  var vm = new Vue({
+    el: '#app',
+    data: data,
+    computed: {
+      myData(){
+        return this.$data;
+      }
+    }
+  });
+
+  console.log(data === vm.$data)
+  console.log(vm);
+  
+</script>
