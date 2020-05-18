@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  
+<div id="app">
+  <div>{{ html }} </div>
+  <div v-html="html"></div>
+</div>
+  
+<script>
+  new Vue({
+    el: '#app',
+      data: {
+        html: '<h1>This is [h1].</h1>',
+      }       
+  });
+</script>
