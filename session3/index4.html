@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+  <template v-if="ok">
+    <p>OK!</p>
+    <p>Good Bye!</p>
+    <p>Hello!</p>
+  </template>
+  <button @click="ok = !ok">button</button>
+</div>
+  
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      ok: true
+    }
+  });
+</script>
