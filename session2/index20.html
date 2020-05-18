@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  
+<div id="app">
+  <p>{{ counter }}</p>
+  <button @click="countUp">+1</button>
+  <button @click="countUp()">+1</button>
+  <p>{{ doubleCounterComputed }}</p>
+  <p>{{ doubleCounterMethods() }}</p>
+</div>
+  
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      counter: 0
+    },
+    computed: {
+      doubleCounterComputed() {
+        return this.counter * 2;
+      }
+    },
+    methods: {
+      countUp() {
+        this.counter += 1;
+      },
+      doubleCounterMethods() {
+        return this.counter * 2;
+      }
+    }
+  });
+</script>
