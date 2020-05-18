@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  
+<div id="app">
+  <p>{{ counter }}</p>
+  <button @click="counter += 1">+1</button>
+  <p>{{ lessThanThreeComputed }}</p>
+</div>
+  
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      counter: 0
+    },
+    computed: {
+      lessThanThreeComputed() {
+        console.log('computed');
+        return this.counter > 3 ? '3以上' : '3以下';
+      }
+    },
+    watch: {
+      counter() {
+        console.log('watch-start');
+        setTimeout(()=>{
+          this.counter = 0
+          console.log('watch-done');
+        }, 3000)
+      }
+    }
+  });
+</script>
