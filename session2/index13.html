@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  
+<div id="app">
+  <p>現在{{number}}回クリックしています</p>
+  <button v-on:click="countUp(3)">カウンタアップ</button>
+  <p v-on:mousemove="changeMousePosition($event, 10)">
+    マウスを載せてください
+    <span v-on:mousemove.stop.prevent>反応しないでください</span>
+  </p>
+  <a v-on:click.prevent.stop href="https://google.com">Google</a>
+  <p>X:{{x}}, Y:{{y}}</p>
+  <input type="text" v-on:keyup.space.enter="myAlert">
+</div>
+  
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      number: 0,
+      x:0,
+      y:0
+    },
+    methods: {
+      countUp: function(times) {
+        this.number += 1 * times
+      },
+      changeMousePosition: function(event, divideNumber){
+        this.x = event.clientX / divideNumber;
+        this.y = event.clientY / divideNumber;
+        console.log(event);
+      },
+      myAlert() {
+        alert("spaceキー enterキー押したら アラート！");
+      }
+    }
+  });
+</script>
