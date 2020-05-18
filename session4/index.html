@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app1">
+  <p>{{message}}</p>
+</div>
+  
+<div id="app2">
+  <p>{{message}}</p>
+</div>
+
+<script>
+  new Vue({
+    el: '#app1',
+    data: {
+      message: 'instance1'
+    }
+  })
+
+  new Vue({
+    el: '#app2',
+    data: {
+      message: 'instance2'
+    }
+  });
+
+</script>
