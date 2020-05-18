@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  
+<div id="app">
+  <p>現在{{number}}回クリックしています</p>
+  <button @click="countUp">カウンタアップ</button>
+</div>
+  
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      number: 0
+    },
+    methods: {
+      countUp: function() {
+        this.number += 1;
+      }
+    }
+  });
+</script>
