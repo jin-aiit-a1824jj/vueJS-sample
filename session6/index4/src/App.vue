@@ -10,7 +10,7 @@
       <component v-bind:is="currnetComponent"></component>
     </keep-alive>
     
-    <div>
+    <div style="padding: 10rem;">
       <h2>イベントのフォーム</h2>
       <label for="title">タイトル</label>
       <input id="title" type="text" v-model.lazy="eventData.title">
@@ -49,8 +49,10 @@
       <label for="paid">有料</label>
       <p>{{eventData.price}}</p>
     
-    
-    
+      <select v-model="eventData.locations" multiple>
+        <option v-for="location in locations" :key="location">{{ location }}</option>  
+      </select>
+      <p>{{eventData.locations}}</p>
     </div>
 
   </div>
@@ -79,8 +81,10 @@ export default {
         detail: "",
         isPrivate: false,
         target: [],
-        price: "無料"
-      }
+        price: "無料",
+        locations: []
+      },
+      locations:["東京","大阪","名古屋"]
     }
   },
   methods: {
