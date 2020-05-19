@@ -26,6 +26,7 @@ Vue.directive("border", {
   unbind(el, binding, vnode){}
 });
 Vue.filter("upperCase", function(value){
+  console.log("Vue.filter-upperCase");
   return value.toUpperCase();
 });
 
