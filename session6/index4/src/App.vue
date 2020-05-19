@@ -1,7 +1,9 @@
 <template>
   <div>
     <LikeHeader></LikeHeader>
-    <LikeNumber></LikeNumber>
+    <p>{{ number }}</p>
+    <LikeNumber v-bind:number="number"></LikeNumber>
+    <LikeNumber :number="number"></LikeNumber>
   </div>
 </template>
 
@@ -12,6 +14,11 @@ import LikeHeader from "./components/LikeHeader.vue";
 export default {
   components: {
     LikeHeader: LikeHeader
+  },
+  data() {
+    return {
+      number: 10
+    }
   }
 }
 </script>
