@@ -1,31 +1,35 @@
 <template>
   <div>
-    <LikeHeader #default="slotProps">
-      <p>{{slotProps}}</p>
-      <h2>みなさん</h2>
+    <LikeHeader>
       <h3>はじめまして</h3>
-      <p>よろしくお願いします</p>
-      <!-- <template v-slot:[title]></template>  -->
-      <template #title></template> 
     </LikeHeader> 
-    
-    <LikeNumber v-bind:totalNumber="number" v-on:my-click="number = $event"></LikeNumber>
     <LikeNumber :totalNumber="number" @my-click="incrementNumber"></LikeNumber>
+    <button @click="currnetComponent = 'Home'">Home</button>
+    <button @click="currnetComponent = 'About'">About</button>
+
+    <component v-bind:is="currnetComponent"></component>
+
+    <!-- <About v-if="currentComponent === 'About'"></About>
+    <Home v-if="currentComponent === 'Home'"></Home> -->
   </div>
 </template>
 
 <script>
 
 import LikeHeader from "./components/LikeHeader.vue";
+import About from "./components/About.vue";
+import Home from "./components/Home.vue";
 
 export default {
   components: {
-    LikeHeader: LikeHeader
+    LikeHeader: LikeHeader,
+    About,
+    Home
   },
   data() {
     return {
       number: 10,
-      title: 'title'
+      currnetComponent: "Home"
     }
   },
   methods: {
