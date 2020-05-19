@@ -8,9 +8,17 @@
       enter-active-class="animate__animated animate__bounce" 
       leave-active-class="animate__animated animate__shakeX" 
       appear>
+      <p v-if="show" key="bye">サヨナラ</p>
+      <p v-else key="hello">こんにちは</p>
+    </transition>
+    
+    <transition
+      enter-active-class="animate__animated animate__bounce" 
+      leave-active-class="animate__animated animate__shakeX" 
+      appear>
       <p v-if="show">hello</p>
     </transition>
-     
+
     <transition :name="myAnimation" appear>
         <p v-show="show">bye</p>
     </transition>
