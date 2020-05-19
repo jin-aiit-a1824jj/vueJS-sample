@@ -14,11 +14,15 @@
       <h2>イベントのフォーム</h2>
       <label for="title">タイトル</label>
       <input id="title" type="text" v-model.lazy="eventData.title">
-      <p>{{eventData.title}}</p>
+      <pre>{{eventData.title}}</pre>
 
       <label for="maxNumber">最大人数</label>
       <input id="maxNumber" type="number" v-model.number="eventData.maxNumber">
       <p>{{typeof eventData.maxNumber}}</p>
+
+      <label for="host">主催者</label>
+      <input id="host" type="text" v-model.trim="eventData.host">
+      <pre>{{eventData.host}}</pre>
 
     </div>
 
@@ -43,7 +47,8 @@ export default {
       currnetComponent: "Home",
       eventData:{
         title: "タイトル",
-        maxNumber: 0
+        maxNumber: 0,
+        host: ""
       }
     }
   },
