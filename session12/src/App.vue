@@ -5,8 +5,22 @@
     <p>{{ myAnimation }}</p>
     <button @click="show = !show">切り替え</button>
     
+    <br><br>
+    <transition
+      @before-enter="beforEnter"
+      @enter="enter"
+      @after-enter="afterEnter"
+      @enter-cancelled="enterCancelled"
+
+      @before-leave="beforeLeave"
+      @leave="leave"
+      @after-leave="afterLeave"
+      @leave-cancelled="leaveCancelled"
+    >
+      <div class="circle" v-if="show"></div>
+    </transition>
     <br>
-    
+
     <button @click="myComponent = 'ComponentA'">ComponentA</button>
     <button @click="myComponent = 'ComponentB'">ComponentB</button>
     <transition name="fade" mode="out-in">
@@ -48,11 +62,34 @@ export default {
       myAnimation: "slide",
       myComponent: "ComponentA"
     };
+  },
+  methods: {
+    beforEnter(el){},
+    enter(el, done){
+
+    },
+    afterEnter(el){},
+    enterCancelled(el){},
+    beforeLeave(el){},
+    leave(el, done){
+      
+    },
+    afterLeave(el){},
+    leaveCancelled(el){},
   }
 }
 </script>
 
 <style scoped>
+
+.circle {
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  border-radius: 100px;
+  background-color: deeppink;
+}
+
 .fade-enter{
   opacity: 0;
 }
