@@ -36,6 +36,7 @@ export default {
   },
   filters: {
     lowerCase(value){
+      //this.tmpData = "can not use";
       return value.toLowerCase();
     }
   }
