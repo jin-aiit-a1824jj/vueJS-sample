@@ -1,5 +1,5 @@
 <template>
   <div>
-    <p v-border="'5px'">Home</p>
+    <p v-border="{ width: '5px', color: 'red' }">Home</p>
   </div>
 </template>

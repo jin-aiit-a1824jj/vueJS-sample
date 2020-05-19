@@ -8,7 +8,8 @@ Vue.directive("border", {
   bind(el, binding, vnode){
     console.log("border-bind");
     el.style.border = "solid black 2px"
-    el.style.borderWidth = binding.value;
+    el.style.borderWidth = binding.value.width;
+    el.style.borderColor = binding.value.color;
   },
   inserted(el, binding, vnode){},
   update(el, binding, vnode, oldVnode){
