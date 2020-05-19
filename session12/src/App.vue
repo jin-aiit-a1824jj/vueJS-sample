@@ -7,11 +7,11 @@
     
     <br><br>
     <transition
+      :css="false"
       @before-enter="beforEnter"
       @enter="enter"
       @after-enter="afterEnter"
       @enter-cancelled="enterCancelled"
-
       @before-leave="beforeLeave"
       @leave="leave"
       @after-leave="afterLeave"
@@ -72,7 +72,7 @@ export default {
     enterCancelled(el){},
     beforeLeave(el){},
     leave(el, done){
-      
+
     },
     afterLeave(el){},
     leaveCancelled(el){},
