@@ -6,7 +6,13 @@
     </transition>
     
     <transition name="slide">
-      <p v-if="show">bye</p>
+      <div v-if="show">
+        <p>bye</p>
+        <p>hello</p>
+        <p>hello</p>
+        <p>hello</p>
+        <p>hello</p>
+      </div>
     </transition>
 
   </div>
