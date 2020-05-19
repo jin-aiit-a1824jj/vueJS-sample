@@ -1,25 +1,11 @@
 <template>
   <div>
-    <LikeHeader headerText="Hello" v-slot:default="slotProps">
-      <!-- <h2>みなさん</h2>
-      
-      <template v-slot:title="slotProps">
-        <h1>こんにちは</h1>
-        <h1>{{ slotProps.user.firstName }}</h1>
-      </template>
-      
-      <h3>はじめまして</h3>
-      <p>よろしくお願いします</p>
-
-      <template v-slot:number>
-        <h2>{{ number }}</h2>
-      </template> -->
-     
+    <LikeHeader>
       <p>{{slotProps}}</p>
       <h2>みなさん</h2>
       <h3>はじめまして</h3>
       <p>よろしくお願いします</p>
- 
+      <template v-slot:[title]></template> 
     </LikeHeader> 
     
     <LikeNumber v-bind:totalNumber="number" v-on:my-click="number = $event"></LikeNumber>
@@ -37,7 +23,8 @@ export default {
   },
   data() {
     return {
-      number: 10
+      number: 10,
+      title: 'title'
     }
   },
   methods: {
