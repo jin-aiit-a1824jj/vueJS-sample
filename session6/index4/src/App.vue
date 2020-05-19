@@ -2,6 +2,7 @@
   <div>
     <LikeHeader headerText="Hello">
       <h2>みなさん</h2>
+      
       <template v-slot:title>
         <h1>こんにちは</h1>
       </template>
