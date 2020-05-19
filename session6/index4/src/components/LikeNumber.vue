@@ -16,7 +16,11 @@ export default {
           number: 5
         };
       }
-    } 
+    },
+    testProps: {
+      type: String,
+      required: false
+    }
   },
   methods:{
     increment(){
