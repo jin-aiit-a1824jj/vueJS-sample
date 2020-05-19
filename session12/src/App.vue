@@ -64,15 +64,33 @@ export default {
     };
   },
   methods: {
-    beforEnter(el){},
+    beforEnter(el){
+       el.style.transform = `scale(0)`;
+    },
     enter(el, done){
-
+      let scale = 0;
+      const interval = setInterval(()=>{
+        el.style.transform = `scale(${scale})`;
+        scale += 0.1;
+        if( scale > 1){
+          clearInterval(interval);
+          done();
+        }
+      }, 20);
     },
     afterEnter(el){},
     enterCancelled(el){},
     beforeLeave(el){},
     leave(el, done){
-
+      let scale = 1;
+      const interval = setInterval(()=>{
+        el.style.transform = `scale(${scale})`;
+        scale -= 0.1;
+        if( scale < 0){
+          clearInterval(interval);
+          done();
+        }
+      }, 20);
     },
     afterLeave(el){},
     leaveCancelled(el){},
