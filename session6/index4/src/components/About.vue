@@ -9,6 +9,12 @@
 export default {
   destroyed(){
     console.log("destroyed - About.vue");
+  },
+  deactivated(){
+    console.log("deactivated - About.vue");
+  },
+  activated(){
+    console.log("activated - About.vue");
   }
 }
 </script>
