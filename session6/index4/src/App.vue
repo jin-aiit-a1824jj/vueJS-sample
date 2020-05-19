@@ -6,12 +6,11 @@
     <LikeNumber :totalNumber="number" @my-click="incrementNumber"></LikeNumber>
     <button @click="currnetComponent = 'Home'">Home</button>
     <button @click="currnetComponent = 'About'">About</button>
-
-    <component v-bind:is="currnetComponent"></component>
-
-    <!-- <About v-if="currentComponent === 'About'"></About>
-    <Home v-if="currentComponent === 'Home'"></Home> -->
-  </div>
+    <keep-alive>
+      <component v-bind:is="currnetComponent"></component>
+    </keep-alive>
+    
+    </div>
 </template>
 
 <script>
