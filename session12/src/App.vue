@@ -1,28 +1,53 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="main">
+    <button @click="show = !show">切り替え</button>
+    <transition name="fade">
+      <p v-if="show">hello</p>
+    </transition>
+    
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  data(){
+    return{
+      show: true
+    };
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+<style scoped>
+.fade-enter{
+
+}
+
+.fade-enter-active{
+
+}
+
+.fade-enter-to{
+
+}
+
+.fade-leave{
+
+}
+
+.fade-leave-active{
+
+}
+
+.fade-leave-to{
+
+}
+
+
+.main{
+  width: 70%;
+  margin: auto;
+  padding-top: 5rem;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
