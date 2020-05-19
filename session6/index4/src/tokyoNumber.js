@@ -16,5 +16,8 @@ export const tokyoNumber = {
       //this.tmpData = "can not use";
       return value.toLowerCase();
     }
+  },
+  created(){
+    console.log("created in Mixin -tokyoNumber");
   }
 };
