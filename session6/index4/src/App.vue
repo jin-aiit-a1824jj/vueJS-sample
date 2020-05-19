@@ -1,7 +1,9 @@
 <template>
   <div>
-    <LikeHeader></LikeHeader>
-    <p>{{ number }}</p>
+    <LikeHeader>
+      <h1>トータルのいいね数</h1>
+      <h2>{{ number }}</h2>
+    </LikeHeader> 
     <LikeNumber v-bind:totalNumber="number" v-on:my-click="number = $event"></LikeNumber>
     <LikeNumber :totalNumber="number" @my-click="incrementNumber"></LikeNumber>
   </div>
