@@ -5,11 +5,16 @@ import LikeNumber from './components/LikeNumber.vue'
 Vue.config.productionTip = false
 Vue.component("LikeNumber", LikeNumber);
 Vue.directive("border", {
-  bind(){},
-  inserted(){},
-  update(){},
-  componentUpdated(){},
-  unbind(){}
+  bind(el, binding, vnode){
+    console.log("border-bind");
+    el.style.border = "solid black 2px"
+  },
+  inserted(el, binding, vnode){},
+  update(el, binding, vnode, oldVnode){
+    console.log("border-update");
+  },
+  componentUpdated(el, binding, vnode, oldVnode){},
+  unbind(el, binding, vnode){}
 });
 
 new Vue({
