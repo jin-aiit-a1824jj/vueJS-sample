@@ -10,6 +10,13 @@
       <component v-bind:is="currnetComponent"></component>
     </keep-alive>
     
+    <div>
+      <h2>イベントのフォーム</h2>
+      <label for="title">タイトル</label>
+      <input id="title" type="text" v-model="eventData.title">
+      <p>{{eventData.title}}</p>
+    </div>
+
     </div>
 </template>
 
@@ -28,7 +35,10 @@ export default {
   data() {
     return {
       number: 10,
-      currnetComponent: "Home"
+      currnetComponent: "Home",
+      eventData:{
+        title: "タイトル"
+      }
     }
   },
   methods: {
@@ -38,13 +48,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-div {
-  border: 1px solid red;
-}
-
-h1 {
-  color: green;
-}
-</style>
