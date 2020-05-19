@@ -11,21 +11,10 @@
 
 <script>
 import CountNumber from "./CountNumber.vue";
+import { tokyoNumber } from "@/tokyoNumber";
 
 export default {
-  data(){
-    return {
-      tmpData: "hello",
-      title: "Welcome to Tokyo",
-      subtitle: "Tokyo is a great city",
-      number: 0
-    }
-  },
-  computed: {
-    upperCaseTitle() {
-      return this.title.toUpperCase();
-    }
-  },
+  mixins: [tokyoNumber],
   components:{
     CountNumber
   },
@@ -41,12 +30,6 @@ export default {
       if(binding.modifiers.shadow) {
         el.style.boxShadow = "0 2px 5px rgba(0,0,0,0.26)";
       }
-    }
-  },
-  filters: {
-    lowerCase(value){
-      //this.tmpData = "can not use";
-      return value.toLowerCase();
     }
   }
 }
