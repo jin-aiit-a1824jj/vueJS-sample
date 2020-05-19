@@ -6,8 +6,14 @@
 
 <script>
 export default {
+  data(){
+    return {
+      tmpData: "hello"
+    }
+  },
   directives: {
     border: function(el, binding){
+      //this.tmpData = "can not use";
       el.style.borderWidth = binding.value.width;
       el.style.borderColor = binding.value.color;
       el.style.borderStyle = binding.arg;
