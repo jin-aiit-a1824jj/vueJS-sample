@@ -29,6 +29,11 @@ Vue.filter("upperCase", function(value){
   console.log("Vue.filter-upperCase");
   return value.toUpperCase();
 });
+Vue.mixin({
+  created(){
+    console.log("Vue.mixin - Global");
+  }
+});
 
 new Vue({
   render: h => h(App),
