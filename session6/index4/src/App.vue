@@ -3,8 +3,9 @@
     <LikeHeader headerText="Hello">
       <h2>みなさん</h2>
       
-      <template v-slot:title>
+      <template v-slot:title="slotProps">
         <h1>こんにちは</h1>
+        <h1>{{ slotProps.user.firstName }}</h1>
       </template>
       
       <h3>はじめまして</h3>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <slot name="title">デフォルトのタイトル</slot>
+    <slot name="title" :user="user" text="text">デフォルトのタイトル</slot>
     <p>{{ headerText }}</p>
     <hr>
     <slot></slot>
@@ -12,6 +12,14 @@
 
 <script>
 export default {
-  props: ["headerText"]
+  props: ["headerText"],
+  data() {
+    return {
+      user:{
+        firstName: 'Jack',
+        lastName: 'Donald'
+      }
+    }
+  }
 }
 </script>
