@@ -1,8 +1,8 @@
 <template>
   <div>
     <p v-border:solid.round.shadow="{ width: '5px', color: 'red' }">Home</p>
-    <h2>{{ title | lowerCase }}</h2>
-    <p>{{ subtitle | lowerCase }}</p>
+    <h2>{{ title | upperCase | lowerCase}}</h2>
+    <p>{{ subtitle | lowerCase | upperCase }}</p>
   </div>
 </template>
 
