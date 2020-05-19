@@ -1,7 +1,7 @@
 <template>
   <div>
-    <LikeHeader headerText="Hello">
-      <h2>みなさん</h2>
+    <LikeHeader headerText="Hello" v-slot:default="slotProps">
+      <!-- <h2>みなさん</h2>
       
       <template v-slot:title="slotProps">
         <h1>こんにちは</h1>
@@ -13,8 +13,13 @@
 
       <template v-slot:number>
         <h2>{{ number }}</h2>
-      </template>
-    
+      </template> -->
+     
+      <p>{{slotProps}}</p>
+      <h2>みなさん</h2>
+      <h3>はじめまして</h3>
+      <p>よろしくお願いします</p>
+ 
     </LikeHeader> 
     
     <LikeNumber v-bind:totalNumber="number" v-on:my-click="number = $event"></LikeNumber>
