@@ -1,6 +1,8 @@
 <template>
   <div>
     <p v-border:solid.round.shadow="{ width: '5px', color: 'red' }">Home</p>
+    <h2>{{ title | upperCase }}</h2>
+    <p>{{ subtitle | upperCase }}</p>
   </div>
 </template>
 
@@ -8,7 +10,14 @@
 export default {
   data(){
     return {
-      tmpData: "hello"
+      tmpData: "hello",
+      title: "Welcome to Tokyo",
+      subtitle: "Tokyo is a great city"
+    }
+  },
+  computed: {
+    upperCaseTitle() {
+      return this.title.toUpperCase();
     }
   },
   directives: {
