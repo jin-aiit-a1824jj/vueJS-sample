@@ -1,7 +1,10 @@
 <template>
   <div class="main">
     <button @click="show = !show">切り替え</button>
-    <transition name="fade" appear>
+    <transition
+      enter-active-class="animate__animated animate__bounce" 
+      leave-active-class="animate__animated animate__shakeX" 
+      appear>
       <p v-if="show">hello</p>
     </transition>
     
@@ -28,7 +31,7 @@ export default {
 }
 
 .fade-enter-active{
-  transition: opacity 1s;
+  transition: opacity 5s;
 }
 
 .fade-enter-to{
@@ -40,7 +43,7 @@ export default {
 }
 
 .fade-leave-active{
-  transition: opacity 1s;
+  transition: opacity 5s;
 }
 
 .fade-leave-to{
