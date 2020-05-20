@@ -20,7 +20,6 @@
 <script>
 import axios from "axios";
 
-const url = 'https://firestore.googleapis.com/v1/projects/YOUR_PROJECT_ID/databases/(default)/documents/cities/LA';
 export default {
   data() {
     return {
@@ -37,7 +36,7 @@ export default {
           comment: { stringValue: this.comment}
         }
       };
-      axios.post(url,data).then(response => {
+      axios.post("/comments",data).then(response => {
         console.log(response);
       }).catch(error => {
         console.log(error);
@@ -47,7 +46,7 @@ export default {
     }
   },
   created(){
-    axios.get(url).then((response)=>{
+    axios.get("/comments").then((response)=>{
       console.log(response.data.documents);
       this.posts = response.data.documents;
     }).catch((error)=>{
