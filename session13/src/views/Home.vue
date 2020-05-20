@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+//import { mapGetters } from "vuex";
 
 export default {
   methods: {
@@ -27,7 +27,13 @@ export default {
     // }
   },
   computed:{ 
-    ...mapGetters(["doubleCounter", "tripleCounter"]),
+    //...mapGetters("count", ["doubleCounter", "tripleCounter"]),
+    doubleCounter() {
+      return this.$store.getters["count/doubleCounter"];
+    },
+    tripleCounter() {
+      return this.$store.getters["count/tripleCounter"];
+    },
     // message() {
     //   return this.$store.getters.message;
     // }
