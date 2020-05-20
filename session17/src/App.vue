@@ -16,6 +16,8 @@
 <script>
 import axios from "axios";
 
+const url = 'https://firestore.googleapis.com/v1/projects/YOUR_PROJECT_ID/databases/(default)/documents/cities/LA';
+      
 export default {
   data() {
     return {
@@ -25,7 +27,6 @@ export default {
   },
   methods: {
     createComment(){
-      const url = 'https://firestore.googleapis.com/v1/projects/YOUR_PROJECT_ID/databases/(default)/documents/cities/LA';
       const data = { 
         fields:{
           name: { stringValue: this.name},
@@ -40,6 +41,13 @@ export default {
       this.name = "";
       this.comment = "";
     }
+  },
+  created(){
+    axios.get(url).then((response)=>{
+      console.log(response);
+    }).catch((error)=>{
+      console.log(error);
+    });
   }
 }
 </script>
