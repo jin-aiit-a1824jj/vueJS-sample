@@ -3,8 +3,19 @@
     <button @click="myAnimation = 'slide'">Slide</button>
     <button @click="myAnimation = 'fade'">Fade</button>
     <p>{{ myAnimation }}</p>
+    <br>
+    <button @click="add">追加</button>
+    <ul style="width: 200px; margin: auto;">
+      <transition-group name="fade">
+        <li 
+        style="cursor: pointer;" 
+        v-for="(number, index) in numbers"
+        :key="number" 
+        @click="remove(index)">{{ number }}</li>
+      </transition-group>
+    </ul>
+    <br>
     <button @click="show = !show">切り替え</button>
-    
     <br><br>
     <transition
       :css="false"
@@ -60,10 +71,22 @@ export default {
     return{
       show: true,
       myAnimation: "slide",
-      myComponent: "ComponentA"
+      myComponent: "ComponentA",
+      numbers: [0,1,2],
+      nextNumber: 3
     };
   },
   methods: {
+    randomIndex(){
+      return Math.floor(Math.random() * this.numbers.length);
+    },
+    add(){
+      this.numbers.splice(this.randomIndex(), 0, this.nextNumber);
+      this.nextNumber += 1;
+    },
+    remove(index){
+      this.numbers.splice(index, 1);
+    },
     beforEnter(el){
        el.style.transform = `scale(0)`;
     },
@@ -78,8 +101,11 @@ export default {
         }
       }, 20);
     },
+    /* eslint no-unused-vars: 0 */
     afterEnter(el){},
+    /* eslint no-unused-vars: 0 */
     enterCancelled(el){},
+    /* eslint no-unused-vars: 0 */
     beforeLeave(el){},
     leave(el, done){
       let scale = 1;
@@ -92,7 +118,9 @@ export default {
         }
       }, 20);
     },
+    /* eslint no-unused-vars: 0 */
     afterLeave(el){},
+    /* eslint no-unused-vars: 0 */
     leaveCancelled(el){},
   }
 }
