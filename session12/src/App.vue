@@ -154,10 +154,16 @@ export default {
 
 .fade-leave-active{
   transition: opacity 1s;
+  position: absolute;
+  width: 200px;
 }
 
 .fade-leave-to{
   opacity: 0;
+}
+
+.fade-move {
+  transition: transform 1s;
 }
 
 .slide-enter,
