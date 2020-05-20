@@ -16,6 +16,11 @@ export default new Router({
      components: {
         default: Home,
         header: HeaderHome  
+      },
+      beforeEnter(to, from, next){
+        console.log(to);
+        console.log(from);
+        next(true);
       }
     },
     {path: '/users/:id',
