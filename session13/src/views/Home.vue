@@ -2,13 +2,15 @@
   <div>
     <h3>Home</h3>
     <button @click="toUsers">Usersのページに行く</button>
-    <p>{{ count }}</p>
-    <p>{{ doubleCount }}</p>
-    <p>{{ tripleCount }}</p>
+    <!-- <p>{{ count }}</p> -->
+    <p>{{ doubleCounter }}</p>
+    <p>{{ tripleCounter }}</p>
   </div>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   methods: {
     toUsers(){
@@ -18,16 +20,8 @@ export default {
       });
     }
   },
-  computed: {
-    count(){
-      return this.$store.state.count;
-    },
-    doubleCount(){
-      return this.$store.getters.doubleCounter;
-    },
-    tripleCount(){
-      return this.$store.getters.tripleCounter;
-    }
+  computed:{ 
+    ...mapGetters(["doubleCounter", "tripleCounter"])
   }
 }
 </script>
