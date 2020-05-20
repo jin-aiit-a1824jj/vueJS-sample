@@ -1,2 +1,4 @@
 vue craete project-name
 npm install vue-router
+
+https://router.vuejs.org/ja/guide/essentials/history-mode.html
