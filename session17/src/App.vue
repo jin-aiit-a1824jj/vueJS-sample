@@ -9,7 +9,11 @@
     <br><br>
     <button @click="createComment">コメントをサーバーに送る</button>
     <h2>掲示板</h2>
-
+    <div v-for="post in posts" :key="post.name">
+      <br>
+      <div>名前：{{post.fields.name.stringValue}}</div>
+      <div>コメント：{{post.fields.comment.stringValue}}</div>
+    </div>
   </div>
 </template>
 
@@ -17,12 +21,12 @@
 import axios from "axios";
 
 const url = 'https://firestore.googleapis.com/v1/projects/YOUR_PROJECT_ID/databases/(default)/documents/cities/LA';
-      
 export default {
   data() {
     return {
       name: "",
-      comment: ""
+      comment: "",
+      posts: []
     };
   },
   methods: {
@@ -44,7 +48,8 @@ export default {
   },
   created(){
     axios.get(url).then((response)=>{
-      console.log(response);
+      console.log(response.data.documents);
+      this.posts = response.data.documents;
     }).catch((error)=>{
       console.log(error);
     });
