@@ -42,25 +42,26 @@ export default new Router({
     },
   ],
   scrollBehavior(to, from, savedPosition){
-    console.log("scrollBehavior");
-    console.log(to)
-    console.log(from)
-    console.log(savedPosition)
+    console.log(from);
 
-    if(savedPosition){
-      return savedPosition;
-    }
+    return new Promise(resolve => {
+      console.log("scrollBehavior-Promise");
+      this.app.$root.$on('triggerScroll', () => {
+        let postion = {x: 0, y: 0};
 
-    if(to.hash){
-      return {
-        selector: to.hash
-      };
-    }
+        if(savedPosition){
+          postion = savedPosition;
+        }
 
-    //return {x: 0, y: 0};
-    return {
-      selector: '#next-user',
-      offset: {x:0, y: 100 }
-    };
+        if(to.hash){
+          postion = {
+            selector: to.hash
+          };
+        }
+
+        resolve(postion);
+      });
+    });
+
   }
 });

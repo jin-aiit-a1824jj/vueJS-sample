@@ -1,11 +1,22 @@
 <template>
   <div style="width: 700px; margin: auto; padding-top: 50px;">
     <router-view name="header"></router-view>
-    <!-- <transition name="fade" mode="out-in"> -->
+    <transition name="fade" mode="out-in" @before-enter="beforeEnter">
       <router-view></router-view>
-    <!-- </transition>  -->
+    </transition> 
   </div>
 </template>
+
+<script>
+export default {
+  methods:{
+    beforeEnter(){
+      console.log("App.vue-beforeEnter")
+      this.$root.$emit('triggerScroll');
+    }
+  }
+}
+</script>
 
 <style scoped>
 .fade-enter,
