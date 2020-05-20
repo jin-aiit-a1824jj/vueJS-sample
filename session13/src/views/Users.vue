@@ -24,26 +24,26 @@ export default {
       console.log(from);
     }
   },
-  beforeRouteEnter(to, from, next){
-    console.log("beforeRouteEnter");
-    console.log(to);
-    console.log(from);
-    next(vm =>{
-      console.log(vm.id);
-    });
-  },
-  beforeRouteUpdate(to, from, next){
-    console.log("beforeRouteUpdate");
-    console.log(to);
-    console.log(from);
-    next();
-  },
-  beforeRouteLeave(to, from, next){
-    console.log("beforeRouteLeave");
-    console.log(to);
-    console.log(from);
-    const isLeave = window.confirm("本当にこのページを離れますか？");
-    next(isLeave);
-  },
+  // beforeRouteEnter(to, from, next){
+  //   console.log("beforeRouteEnter");
+  //   console.log(to);
+  //   console.log(from);
+  //   next(vm =>{
+  //     console.log(vm.id);
+  //   });
+  // },
+  // beforeRouteUpdate(to, from, next){
+  //   console.log("beforeRouteUpdate");
+  //   console.log(to);
+  //   console.log(from);
+  //   next();
+  // },
+  // beforeRouteLeave(to, from, next){
+  //   console.log("beforeRouteLeave");
+  //   console.log(to);
+  //   console.log(from);
+  //   const isLeave = window.confirm("本当にこのページを離れますか？");
+  //   next(isLeave);
+  // },
 }
 </script>
