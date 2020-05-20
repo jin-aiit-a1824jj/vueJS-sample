@@ -3,6 +3,8 @@
     <h3>Home</h3>
     <button @click="toUsers">Usersのページに行く</button>
     <p>{{ count }}</p>
+    <p>{{ doubleCount }}</p>
+    <p>{{ tripleCount }}</p>
   </div>
 </template>
 
@@ -18,8 +20,13 @@ export default {
   },
   computed: {
     count(){
-      console.log(this.$store);
       return this.$store.state.count;
+    },
+    doubleCount(){
+      return this.$store.getters.doubleCounter;
+    },
+    tripleCount(){
+      return this.$store.getters.tripleCounter;
     }
   }
 }

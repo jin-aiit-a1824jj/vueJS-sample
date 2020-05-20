@@ -15,14 +15,14 @@
 <script>
 export default {
   props: ["id"],
-  created() {
-    console.log("created");
-  },
+  // created() {
+  //   console.log("created");
+  // },
   watch:{
-    $route(to, from){
-      console.log(to);
-      console.log(from);
-    }
+    // $route(to, from){
+    //   console.log(to);
+    //   console.log(from);
+    // }
   },
   // beforeRouteEnter(to, from, next){
   //   console.log("beforeRouteEnter");

@@ -11,7 +11,7 @@
 export default {
   methods:{
     beforeEnter(){
-      console.log("App.vue-beforeEnter")
+      //console.log("App.vue-beforeEnter")
       this.$root.$emit('triggerScroll');
     }
   }
