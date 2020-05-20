@@ -5,6 +5,9 @@
     <!-- <p>{{ count }}</p> -->
     <p>{{ doubleCounter }}</p>
     <p>{{ tripleCounter }}</p>
+    <!-- <input type="text" :value="message" @input="updateMessage"> -->
+    <input type="text" v-model="message"> 
+    <p>{{ message }}</p>
   </div>
 </template>
 
@@ -18,10 +21,24 @@ export default {
         name: "users-id-profile",
         params: { id: 1 }
       });
-    }
+    },
+    // updateMessage(e){
+    //   this.$store.dispatch("updateMessage", e.target.value);
+    // }
   },
   computed:{ 
-    ...mapGetters(["doubleCounter", "tripleCounter"])
+    ...mapGetters(["doubleCounter", "tripleCounter"]),
+    // message() {
+    //   return this.$store.getters.message;
+    // }
+    message: {
+      get(){
+        return this.$store.getters.message;
+      },
+      set(value){
+        this.$store.dispatch("updateMessage", value);
+      }
+    }
   }
 }
 </script>
