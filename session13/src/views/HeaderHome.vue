@@ -3,8 +3,23 @@
     <h2>Header-Home</h2>
     <router-link to="/" active-class="link--active" exact class="link">Home</router-link>
     <router-link to="/users/1/profile#next-user" active-class="link--active" exact class="link">Users</router-link>
+    <button @click="increment">+1</button>
+    <button @click="decrement">-1</button>
   </nav>
 </template>
+
+<script>
+export default {
+  methods:{
+    increment(){
+      this.$store.state.count += 1;
+    },
+    decrement(){
+      this.$store.state.count -= 1;
+    }
+  }
+}
+</script>
 
 <style scoped>
 .link {

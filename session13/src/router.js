@@ -55,10 +55,10 @@ export default new Router({
     },
   ],
   scrollBehavior(to, from, savedPosition){
-    console.log(from);
+    //console.log(from);
 
     return new Promise(resolve => {
-      console.log("scrollBehavior-Promise");
+      //console.log("scrollBehavior-Promise");
       this.app.$root.$on('triggerScroll', () => {
         let postion = {x: 0, y: 0};
 
