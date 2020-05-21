@@ -5,3 +5,6 @@ https://github.com/axios/axios
 
 https://firebase.google.com/docs/firestore/use-rest-api?hl=ja
 https://firestore.googleapis.com/v1/projects/YOUR_PROJECT_ID/databases/(default)/documents/cities/LA
+
+
+npm install vue-router
