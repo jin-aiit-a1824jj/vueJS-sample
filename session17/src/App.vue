@@ -19,6 +19,9 @@
 
 <script>
 import axios from "axios";
+import axiosAuth from './axios-auth.js';
+
+console.log(axiosAuth);
 
 export default {
   data() {
