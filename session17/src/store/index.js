@@ -46,5 +46,8 @@ export default new Vuex.Store({
         console.log(error);
       });
     }
+  },
+  getters: {
+    idToken: state => state.idToken
   }
 });

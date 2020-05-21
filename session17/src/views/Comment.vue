@@ -35,7 +35,12 @@ export default {
           comment: { stringValue: this.comment}
         }
       };
-      axios.post("/comments",data).then(response => {
+      const headers = {
+        headers: {
+          Authorization: `Bearer ${this.idToken}`
+        }
+      };
+      axios.post("/comments",data,headers).then(response => {
         console.log(response);
       }).catch(error => {
         console.log(error);
@@ -45,12 +50,22 @@ export default {
     }
   },
   created(){
-    axios.get("/comments").then((response)=>{
+    const headers = {
+      headers: {
+        Authorization: `Bearer ${this.idToken}`
+      }
+    };
+    axios.get("/comments", headers).then((response)=>{
       console.log(response.data.documents);
       this.posts = response.data.documents;
     }).catch((error)=>{
       console.log(error);
     });
+  },
+  computed: {
+    idToken(){
+      return this.$store.getters.idToken;
+    }
   }
 }
 </script>
