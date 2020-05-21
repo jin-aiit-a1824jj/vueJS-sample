@@ -13,7 +13,7 @@
 </template>
 
 <script>
-//import axios from "axios";
+import axiosAuth from "../axios-auth.js";
 export default {
   data() {
     return {
@@ -23,7 +23,19 @@ export default {
   },
   methods: {
     register(){
-      
+      const url = '/accounts:signUp?key=[API_KEY]'
+      const data = {
+        email: this.email,
+        password: this.password,
+        returnSecureToken: true
+      };
+      axiosAuth.post(url, data)
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error=>{
+        console.log(error);
+      });
     }
   }
 }

@@ -8,3 +8,7 @@ https://firestore.googleapis.com/v1/projects/YOUR_PROJECT_ID/databases/(default)
 
 
 npm install vue-router
+
+
+https://firebase.google.com/docs/reference/rest/auth
+https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=[API_KEY]
