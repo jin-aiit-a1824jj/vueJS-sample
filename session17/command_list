@@ -16,3 +16,6 @@ https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=[API_K
 
 
 npm install vuex
+
+
+https://firebase.google.com/docs/reference/rest/auth#section-refresh-token
